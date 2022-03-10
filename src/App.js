@@ -13,8 +13,9 @@ function App() {
         
         <Banner/>
         <Products heading='Choose your favorite' data={productData} />
-        <Footer />
         <Feature/>
+        <Footer />
+      
     </BrowserRouter>
   );
 }
