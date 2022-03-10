@@ -4,17 +4,24 @@ import LocalPizzaIcon from '@material-ui/icons/LocalPizza';
 import ImgBg from '../../images/pizza-3.jpg';
 
 export const MainContainer = styled.div`
-	width: 100vw;
+	
 	height: 100vh;
-	max-width: 100%;
+
 	background-position: center;
 	background-size: cover;
 	background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url(${ImgBg});
+	background-color:red;
+	@media screen and (max-width: 450px) {
+		overflow:hidden !important;
+		width:100%;
+	}
 `;
 export const Nav = styled.nav`
 	height: 80px;
 	width: 100%;
 	display: flex;
+	margin:0;
+	paddding:0;
 	justify-content: space-between;
 `;
 export const NavLink = styled.nav`
@@ -29,6 +36,8 @@ export const NavLink = styled.nav`
 export const NavIcon = styled.div`
 	position: absolute;
 	right: 20px;
+	margin:0;
+	paddding:0;
 	top: 0;
 	color: #fff;
 	font-size: 2 rem;
@@ -42,15 +51,17 @@ export const BannerContent = styled.div`
 	flex-direction: column;
 	align-items: flex-start;
 	width: 100%;
-
+	margin:0;
+	paddding:0;
 	height: calc(100vh - 80px);
 	max-height: 100%;
 	padding: 0 20px;
 	justify-content: center;
 	width: 350px;
 
-	@media screen and (max-width: 450px) {
+	@media screen and (max-width: 550px) {
 		width: 100%;
+			padding:0;
 	}
 `;
 export const Bannerh1 = styled.h1`
@@ -83,7 +94,8 @@ export const BannerButton = styled.button`
 `;
 export const SidebarContainer = styled.aside`
 	position: fixed;
-	
+	margin:0;
+	paddding:0;
 	z-index: 999;
 	width: 350px;
 	height: 100%;

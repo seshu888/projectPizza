@@ -16,12 +16,20 @@ export const ProductWrapper = styled.div`
 export const ProductCard = styled.div`
 	margin: 0 2rem;
 	width: 300px;
+	@media screen and (max-width: 450px) {
+		margin:0 !important;
+		overflow:hidden;
+	}
 `;
 export const ProductImg = styled.img`
 	height: 300px;
 	min-width: 300px;
 	max-width: 100%;
 	box-shadow: 8px 8px #fdc500;
+	@media screen and (max-width: 450px) {
+		margin:0 !important;
+		overflow:hidden;
+	}
 `;
 export const ProductsHeading = styled.h1`
 	font-size: clamp(2rem, 2.5vw, 3rem);

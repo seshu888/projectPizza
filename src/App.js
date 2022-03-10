@@ -10,7 +10,7 @@ import Feature from './components/Feature';
 function App() {
   return (
     <BrowserRouter>
-        
+
         <Banner/>
         <Products heading='Choose your favorite' data={productData} />
         <Feature/>
