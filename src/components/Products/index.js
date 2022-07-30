@@ -11,7 +11,8 @@ import {
   ProductPrice,
   ProductButton
 } from './ProductElements';
-const Products = ({ heading, data }) => {
+const Products = ({ heading, data,handleAddToCart }) => {
+
     return (
       <ProductsContainer>
         <ProductsHeading>{heading}</ProductsHeading>
@@ -24,7 +25,7 @@ const Products = ({ heading, data }) => {
                   <ProductTitle>{product.name}</ProductTitle>
                   <ProductDesc>{product.desc}</ProductDesc>
                   <ProductPrice>{product.price}</ProductPrice>
-                  <ProductButton>{product.button}</ProductButton>
+                  <ProductButton onClick={()=>handleAddToCart(product)}>{product.button}</ProductButton>
                 </ProductInfo>
               </ProductCard>
             );

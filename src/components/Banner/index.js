@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { ProductInfo } from '../Products/ProductElements';
 import {
 	MainContainer,
 	Nav,
@@ -8,27 +8,45 @@ import {
 	BannerContent,
 	Bannerh1,
 	BannerP,
-	BannerButton,SidebarContainer
+	BannerButton,
+	SidebarNav
 } from '../Banner/BannerElements';
-import Sidebar from '../Sidebar';
+import { Close } from '@material-ui/icons';
 
-
-const Banner = () => {
+const Banner = ({ cartItems,total }) => {
 	const [ openSidebar, setOpenSideBar ] = useState(false);
+
 	const handleClick = () => {
-		setOpenSideBar(true);
+		setOpenSideBar(!openSidebar);
+
 	};
+
+
+	console.log(cartItems);
 	return (
 		<MainContainer>
+			<SidebarNav openSidebar={openSidebar}>
+				<p onClick={handleClick}>Close the Cart</p>
+				{cartItems &&
+					cartItems.map((product, index) => {
+						return (
+							<div key={index} style={{ display: 'flex', justifyContent: 'space-between' }}>
+								<ProductInfo>{product.name}</ProductInfo>
+								<ProductInfo>{product.price}</ProductInfo>
+							</div>
+						);
+					})}
+				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+					<ProductInfo>total</ProductInfo>
+					<ProductInfo>{total}</ProductInfo>
+				</div>
+			</SidebarNav>
 			<Nav>
 				<NavLink>SPROUTS</NavLink>
-			
-					<NavIcon onClick={handleClick}>
-						<p>Menu</p>
-					</NavIcon>
-					{openSidebar ? (
-						<SidebarContainer >seshu</SidebarContainer>
-					) : ""}
+
+				<NavIcon>
+					<p onClick={handleClick}>Menu</p>
+				</NavIcon>
 			</Nav>
 
 			<BannerContent>
